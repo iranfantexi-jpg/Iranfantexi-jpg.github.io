@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>1</title>
+    <url>/2022/04/20/1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>springboot</title>
+    <url>/2019/11/21/Springboot/</url>
+    <content><![CDATA[<blockquote>
+<p>提示：文章写完后，目录可以自动生成，如何生成可参考右边的帮助文档</p>
+</blockquote>
+<p>Spring boot</p>
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>提示：这里可以添加本文要记录的大概内容：</code></p>
+<p>例如：随着人工智能的不断发展，机器学习这门技术也越来越重要，很多人都开启了学习机器学习，本文就介绍了机器学习的基础内容。</p>
+<hr>
+<p><code>提示：以下是本篇文章正文内容，下面案例可供参考</code></p>
+<h1 id="一、pandas是什么？"><a href="#一、pandas是什么？" class="headerlink" title="一、pandas是什么？"></a>一、pandas是什么？</h1><p>示例：pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。</p>
+<h1 id="二、使用步骤"><a href="#二、使用步骤" class="headerlink" title="二、使用步骤"></a>二、使用步骤</h1><h2 id="1-引入库"><a href="#1-引入库" class="headerlink" title="1.引入库"></a>1.引入库</h2><p>代码如下（示例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br><span class="line">import warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">import  ssl</span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-读入数据"><a href="#2-读入数据" class="headerlink" title="2.读入数据"></a>2.读入数据</h2><p>代码如下（示例）：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">data = pd.read_csv(</span><br><span class="line">    <span class="string">&#x27;https://labfile.oss.aliyuncs.com/courses/1283/adult.data.csv&#x27;</span>)</span><br><span class="line">print(data.head())</span><br></pre></td></tr></table></figure>
+<p>该处使用的url网络请求的数据。</p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>提示：这里对文章进行总结：<br>例如：以上就是今天要讲的内容，本文仅仅简单介绍了pandas的使用，而pandas提供了大量能使我们快速便捷地处理数据的函数和方法。</p>
+]]></content>
+  </entry>
+</search>
