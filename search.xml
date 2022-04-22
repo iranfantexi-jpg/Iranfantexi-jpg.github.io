@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1</title>
-    <url>/2022/04/20/1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>springboot</title>
-    <url>/2019/11/21/Springboot/</url>
+    <title>使用hexo+github免费搭建个人博客网站超详细教程</title>
+    <url>/2022/04/22/%E4%BD%BF%E7%94%A8hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E8%B6%85%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%20(1)/</url>
     <content><![CDATA[<blockquote>
-<p>提示：文章写完后，目录可以自动生成，如何生成可参考右边的帮助文档</p>
+<p>本文详细描述了如何在Github上，使用hexo部署博客。</p>
 </blockquote>
-<p>Spring boot</p>
-<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>提示：这里可以添加本文要记录的大概内容：</code></p>
-<p>例如：随着人工智能的不断发展，机器学习这门技术也越来越重要，很多人都开启了学习机器学习，本文就介绍了机器学习的基础内容。</p>
-<hr>
-<p><code>提示：以下是本篇文章正文内容，下面案例可供参考</code></p>
-<h1 id="一、pandas是什么？"><a href="#一、pandas是什么？" class="headerlink" title="一、pandas是什么？"></a>一、pandas是什么？</h1><p>示例：pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。</p>
-<h1 id="二、使用步骤"><a href="#二、使用步骤" class="headerlink" title="二、使用步骤"></a>二、使用步骤</h1><h2 id="1-引入库"><a href="#1-引入库" class="headerlink" title="1.引入库"></a>1.引入库</h2><p>代码如下（示例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br><span class="line">import warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">import  ssl</span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br></pre></td></tr></table></figure>
+<h1 id="一、Hexo简介"><a href="#一、Hexo简介" class="headerlink" title="一、Hexo简介"></a>一、Hexo简介</h1><p>Hexo是一个快速、简洁且高效的博客框架，让上百个页面在几秒内瞬间完成渲染，Hexo支持Github Flavored Markdown 的所有功能，甚至可以整合Octopress的大多数插件，并自己也有强大的插件系统。大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>进行详细查看。</p>
+<span id="more"></span>
+<h1 id="二、Hexo搭建步骤"><a href="#二、Hexo搭建步骤" class="headerlink" title="二、Hexo搭建步骤"></a>二、Hexo搭建步骤</h1><ol>
+<li>安装Git 安装Node.js </li>
+<li>安装Hexo </li>
+<li>GitHub创建个人仓库</li>
+<li>将hexo部署到GitHub</li>
+</ol>
+<h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h2><p>windows：到git官网上下载,<a href="https://gitforwindows.org/">Download git</a>,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。<br><img src="https://img-blog.csdnimg.cn/46c406682c384cc5b310a2ac01ed93dd.png#pic_center" alt="在电脑任意地方右键出现Git GUI Here、Git Bash Here 即安装成功在这里插入图片描述的"></p>
+<p>linux：对linux来说实在是太简单了，因为最早的git就是在linux上编写的，只需要一行代码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>安装好后，用 <code>git --version</code> 来查看一下版本<br><img src="https://img-blog.csdnimg.cn/c76363b753c645b798426a3383942ba3.png" alt="在这里插入图片描述"></p>
+<h2 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2.安装nodejs"></a>2.安装nodejs</h2><p>Windows：直接到官网上下载安装即可<a href="https://nodejs.org/en/download/">nodejs</a><br>安装完后，打开命令行</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>安装成功<br><img src="https://img-blog.csdnimg.cn/3c5f0deaa2c040f98c9d89c03ad831be.png" alt="在这里插入图片描述"></p>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>安装完Git和nodejs就可以安装Hexo了，我们先创建一个文件夹myblog用于存放Hexo目录，然后cd到这个文件夹下<br>执行命令</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p><code>hexo -v</code>查看一下版本</p>
+<p><img src="https://img-blog.csdnimg.cn/c4717ee2ae7a430387459bcfbcfceb3d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA4oCt5ouS57ud6ICF,size_14,color_FFFFFF,t_70,g_se,x_16" alt="这是我的版本信息"></p>
+<p>接下来初始化一下hexo</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure>
+<p>这个myblog可以自己取什么名字都行，然后</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> cd myblog <span class="comment">//进入myblog文件夹</span></span><br><span class="line"><span class="number">2</span> npm install</span><br></pre></td></tr></table></figure>
+<p>开启本地服务</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> hexo g</span><br><span class="line"><span class="number">2</span> hexo server</span><br></pre></td></tr></table></figure>
+<p>打开hexo的服务，在浏览器输入localhost:4000就可以看到你生成的博客了。</p>
+<h2 id="3-部署Github"><a href="#3-部署Github" class="headerlink" title="3.部署Github"></a>3.部署Github</h2><ul>
+<li><a href="https://github.com/">Github官网</a></li>
+<li>输入用户名，Email，密码，注册账号</li>
+<li>在Github创建仓库 仓库名称 用户名.github.io</li>
+<li>修改目录下的配置文件_config.yml</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:<span class="comment">//hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https:<span class="comment">//github.com/i/i.github.io.git  //Git仓库地址</span></span><br><span class="line">  branch: main <span class="comment">//分支</span></span><br></pre></td></tr></table></figure>
+<p>执行命令：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> hexo clean </span><br><span class="line"><span class="number">2</span> hexo d #将代码上传到Github</span><br><span class="line"><span class="number">3</span> hexo g #生成静态页面</span><br><span class="line"><span class="number">4</span> hexo s #启动本地服务</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-读入数据"><a href="#2-读入数据" class="headerlink" title="2.读入数据"></a>2.读入数据</h2><p>代码如下（示例）：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">data = pd.read_csv(</span><br><span class="line">    <span class="string">&#x27;https://labfile.oss.aliyuncs.com/courses/1283/adult.data.csv&#x27;</span>)</span><br><span class="line">print(data.head())</span><br></pre></td></tr></table></figure>
-<p>该处使用的url网络请求的数据。</p>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>提示：这里对文章进行总结：<br>例如：以上就是今天要讲的内容，本文仅仅简单介绍了pandas的使用，而pandas提供了大量能使我们快速便捷地处理数据的函数和方法。</p>
+<p>打开网页，输入<a href="http://username.github.io，打开github上托管的博客。如我的博客地址是：http://iranfantexi-jpg.github.io。">http://username.github.io，打开github上托管的博客。如我的博客地址是：http://iranfantexi-jpg.github.io。</a></p>
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ul>
+<li><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029/">hexo史上最全搭建教程</a></li>
+<li><a href="https://blog.csdn.net/xuezhisdc/article/details/53130328?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.topblog&spm=1001.2101.3001.4242.1&utm_relevant_index=3">hexo教程系列——hexo安装教程</a></li>
+</ul>
 ]]></content>
   </entry>
 </search>
